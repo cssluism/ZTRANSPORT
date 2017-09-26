@@ -1,0 +1,21 @@
+[{
+	"___FK_a35b7abe00ef5ee30e8bf630": "",
+	"DefaultName": "",
+	"F_NAME": "Purchase Order",
+	"ID": "1"
+}, {
+	"___FK_a35b7abe00ef5ee30e8bf630": "",
+	"DefaultName": "",
+	"F_NAME": "Delivery Date",
+	"ID": "2"
+}, {
+	"___FK_a35b7abe00ef5ee30e8bf630": "",
+	"DefaultName": "",
+	"F_NAME": "AFM Date",
+	"ID": "3"
+}, {
+	"___FK_a35b7abe00ef5ee30e8bf630": "",
+	"DefaultName": "",
+	"F_NAME": "Status",
+	"ID": "4"
+}]

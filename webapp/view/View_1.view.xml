@@ -1,0 +1,309 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.zmmtransport.controller.View_1" xmlns:uxap="sap.uxap"
+	xmlns:m="sap.m" xmlns:form="sap.ui.layout.form">
+	<uxap:ObjectPageLayout showTitleInHeaderContent="false" showHeaderContent="false" showAnchorBar="true" showFooter="false"
+		subSectionLayout="TitleOnTop">
+		<uxap:headerContent/>
+		<uxap:headerTitle>
+			<uxap:ObjectPageHeader objectImageURI="sap-icon://shipping-status" objectTitle="Transportation Detail" objectSubtitle="Subtitle"
+				headerDesign="Dark" objectImageShape="Circle" isObjectIconAlwaysVisible="true" isObjectTitleAlwaysVisible="true"
+				isObjectSubtitleAlwaysVisible="false" isActionAreaAlwaysVisible="false">
+				<uxap:actions/>
+				<uxap:breadCrumbsLinks/>
+				<uxap:navigationBar>
+					<m:Bar design="Auto">
+						<m:contentLeft>
+							<m:Button text="" type="Default" icon="sap-icon://slim-arrow-left" iconFirst="true" width="auto" enabled="true" visible="true"
+								iconDensityAware="false" press="_onButtonPress"/>
+						</m:contentLeft>
+						<m:contentMiddle/>
+						<m:contentRight/>
+					</m:Bar>
+				</uxap:navigationBar>
+			</uxap:ObjectPageHeader>
+		</uxap:headerTitle>
+		<uxap:sections>
+			<uxap:ObjectPageSection showTitle="false" title="Header Data" titleUppercase="false" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Header Data" mode="Expanded">
+						<uxap:blocks>
+							<form:Form width="70%" editable="true" visible="true">
+								<form:title/>
+								<form:formContainers>
+									<form:FormContainer visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<m:Label text="Purchase Order" design="Bold" width="auto" required="true" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+												<form:fields>
+													<m:Input value="{EBELN}" type="Text" showValueHelp="false" enabled="false" visible="true" width="170px" valueHelpOnly="false" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<m:Label text="Ship Number" design="Bold" width="auto" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+												<form:fields>
+													<m:Input value="{path: 'SHIP_NO', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" type="Text"
+														showValueHelp="false" enabled="false" visible="true" width="170px" valueHelpOnly="false" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<m:Label text="AFM Date" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+												<form:fields>
+													<m:DatePicker placeholder="" value="{path: 'AFM_DATE', type: 'sap.ui.model.type.Date', formatOptions: { UTC: true, style: 'short' }}"
+														enabled="false" visible="true" width="170px" displayFormat="MMM dd, yyyy"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<m:Label text="Reception Date" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+												<form:fields>
+													<m:DatePicker placeholder="" value="{path: 'R_DATE', type: 'sap.ui.model.type.Date', formatOptions: { UTC: true, style: 'short' }}"
+														enabled="false" visible="true" width="170px" displayFormat="MMM dd, yyyy"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<m:Label text="User" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+												<form:fields>
+													<m:Input value="{V_USER}" type="Text" showValueHelp="false" enabled="false" visible="true" width="170px" valueHelpOnly="false" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<m:Label text="Description" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+												<form:fields>
+													<m:Input value="{DESCRIPTION}" type="Text" showValueHelp="false" enabled="false" visible="true" width="170px" valueHelpOnly="false"
+														maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection showTitle="false" title="Packing Data" titleUppercase="false" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Packing Data" mode="Collapsed">
+						<uxap:blocks>
+							<form:Form width="70%" editable="true" visible="true">
+								<form:title/>
+								<form:formContainers>
+									<form:FormContainer visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<m:Label text="Packages" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+												<form:fields>
+													<m:Input value="{PACKAGES}" type="Text" showValueHelp="false" enabled="false" visible="true" width="170px" valueHelpOnly="false"
+														maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<m:Label text="Weights KG" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+												<form:fields>
+													<m:Input value="{path: 'WEIGHTS_KG', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" type="Text"
+														showValueHelp="false" enabled="false" visible="true" width="170px" valueHelpOnly="false" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<m:Label text="LxAxH cm" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+												<form:fields>
+													<m:Input value="{path: 'LXAXH_CM', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" type="Text"
+														showValueHelp="false" enabled="false" visible="true" width="170px" valueHelpOnly="false" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<m:Label text="Volume M3" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+												<form:fields>
+													<m:Input value="{path: 'VOLUME_M3', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" type="Text"
+														showValueHelp="false" enabled="false" visible="true" width="170px" valueHelpOnly="false" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection showTitle="false" title="Truck Data" titleUppercase="true" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Truck Data" mode="Expanded">
+						<uxap:blocks>
+							<form:Form width="70%" editable="true" visible="true">
+								<form:title/>
+								<form:formContainers>
+									<form:FormContainer visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<m:Label text="Truck Type" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+												<form:fields>
+													<m:Input value="{TRUCK_TYPE}" type="Text" showValueHelp="false" enabled="false" visible="true" width="170px" valueHelpOnly="false"
+														maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<m:Label text="Truck Cost" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+												<form:fields>
+													<m:Input value="{path: 'TRUCK_COST', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" type="Text"
+														showValueHelp="false" enabled="false" visible="true" width="170px" valueHelpOnly="false" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<m:Label text="Truck Plate" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+												<form:fields>
+													<m:Input value="{TRUCK_PLATE}" type="Text" showValueHelp="false" enabled="false" visible="true" width="170px" valueHelpOnly="false"
+														maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection showTitle="false" title="Custom Data" titleUppercase="true" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Custom Data" mode="Expanded">
+						<uxap:blocks>
+							<form:Form width="70%" editable="true" visible="true">
+								<form:title/>
+								<form:formContainers>
+									<form:FormContainer visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<m:Label text="Choice Invoice" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+												<form:fields>
+													<m:Input value="{CHOICE_INVOICE}" type="Text" showValueHelp="false" enabled="false" visible="true" width="170px" valueHelpOnly="false"
+														maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<m:Label text="Estiba" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+												<form:fields>
+													<m:Input value="{path: 'ESTIBA', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" type="Text"
+														showValueHelp="false" enabled="false" visible="true" width="170px" valueHelpOnly="false" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<m:Label text="Agility Invoice" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+												<form:fields>
+													<m:Input value="{AGILITY_INVOICE}" type="Text" showValueHelp="false" enabled="false" visible="true" width="170px" valueHelpOnly="false"
+														maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection showTitle="false" title="Comments" titleUppercase="true" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Coments" mode="Expanded">
+						<uxap:blocks>
+							<form:Form width="70%" editable="true" visible="true">
+								<form:title/>
+								<form:formContainers>
+									<form:FormContainer visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<m:Label text="Coments" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+												<form:fields>
+													<m:TextArea value="{COMMENTS}" rows="7" cols="10" maxLength="0" wrapping="None" visible="true"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:footer>
+			<m:Bar design="Footer">
+				<m:contentLeft/>
+				<m:contentMiddle/>
+				<m:contentRight>
+					<m:Button text="Save" type="Accept" icon="sap-icon://sys-enter" iconFirst="true" width="auto" enabled="true" visible="true"
+						iconDensityAware="false" press="_onButtonPress1"/>
+					<m:Button text="Clear" type="Reject" icon="sap-icon://decline" iconFirst="true" width="auto" enabled="true" visible="true"
+						iconDensityAware="false" press="_onButtonPress2"/>
+				</m:contentRight>
+			</m:Bar>
+		</uxap:footer>
+	</uxap:ObjectPageLayout>
+</mvc:View>

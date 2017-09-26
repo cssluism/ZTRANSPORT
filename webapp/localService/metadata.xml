@@ -1,0 +1,174 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="49835fb7d0a746b50e86b095" xml:lang="en" sap:schema-version="0000" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityContainer Name="49835fb7d0a746b50e86b095_Entities" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="TAB_READYSet" EntityType="49835fb7d0a746b50e86b095.TAB_READY" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+				<EntitySet Name="TAB_WAITSet" EntityType="49835fb7d0a746b50e86b095.TAB_WAIT" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+				<EntitySet Name="ZMM_TTRANSPORTATIONSet" EntityType="49835fb7d0a746b50e86b095.ZMM_TTRANSPORTATION" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+				<AssociationSet Name="ZMM_TTRANSPORTATIONREADYTAB_READY" Association="49835fb7d0a746b50e86b095.ZMM_TTRANSPORTATIONREADYTAB_READY"
+					sap:creatable="true" sap:updatable="true" sap:deletable="true">
+					<End EntitySet="ZMM_TTRANSPORTATIONSet" Role="FromRole_ZMM_TTRANSPORTATIONREADYTAB_READY"/>
+					<End EntitySet="TAB_READYSet" Role="ToRole_ZMM_TTRANSPORTATIONREADYTAB_READY"/>
+				</AssociationSet>
+				<AssociationSet Name="ZMM_TTRANSPORTATIONWAITTAB_WAIT" Association="49835fb7d0a746b50e86b095.ZMM_TTRANSPORTATIONWAITTAB_WAIT"
+					sap:creatable="true" sap:updatable="true" sap:deletable="true">
+					<End EntitySet="ZMM_TTRANSPORTATIONSet" Role="FromRole_ZMM_TTRANSPORTATIONWAITTAB_WAIT"/>
+					<End EntitySet="TAB_WAITSet" Role="ToRole_ZMM_TTRANSPORTATIONWAITTAB_WAIT"/>
+				</AssociationSet>
+				<AssociationSet Name="ZMM_TTRANSPORTATIONFILTERFIELD_FILTER" Association="49835fb7d0a746b50e86b095.ZMM_TTRANSPORTATIONFILTERFIELD_FILTER"
+					sap:creatable="true" sap:updatable="true" sap:deletable="true">
+					<End EntitySet="ZMM_TTRANSPORTATIONSet" Role="FromRole_ZMM_TTRANSPORTATIONFILTERFIELD_FILTER"/>
+					<End EntitySet="FIELD_FILTERSet" Role="ToRole_ZMM_TTRANSPORTATIONFILTERFIELD_FILTER"/>
+				</AssociationSet>
+				<EntitySet Name="FIELD_FILTERSet" EntityType="49835fb7d0a746b50e86b095.FIELD_FILTER" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+			</EntityContainer>
+			<EntityType Name="TAB_READY">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="EBELN" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="EBELN"/>
+				<Property Name="SHIP_NO" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="SHIP_NO"/>
+				<Property Name="EINDT" Type="Edm.DateTime" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:display-format="Date"
+					sap:label="EINDT"/>
+				<Property Name="AFM_DATE" Type="Edm.DateTime" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:display-format="Date"
+					sap:label="AFM_DATE"/>
+				<Property Name="R_DATE" Type="Edm.DateTime" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:display-format="Date"
+					sap:label="R_DATE"/>
+				<Property Name="V_USER" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="V_USER"/>
+				<Property Name="DESCRIPTION" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DESCRIPTION"/>
+				<Property Name="PACKAGES" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="PACKAGES"/>
+				<Property Name="WEIGHTS_KG" Type="Edm.Double" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="WEIGHTS_KG"/>
+				<Property Name="LXAXH_CM" Type="Edm.Double" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="LXAXH_CM"/>
+				<Property Name="VOLUME_M3" Type="Edm.Double" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="VOLUME_M3"/>
+				<Property Name="TRUCK_TYPE" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="TRUCK_TYPE"/>
+				<Property Name="TRUCK_COST" Type="Edm.Double" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="TRUCK_COST"/>
+				<Property Name="TRUCK_PLATE" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="TRUCK_PLATE"/>
+				<Property Name="CHOICE_INVOICE" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="CHOICE_INVOICE"/>
+				<Property Name="ESTIBA" Type="Edm.Double" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ESTIBA"/>
+				<Property Name="AGILITY_INVOICE" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="AGILITY_INVOICE"/>
+				<Property Name="COMMENTS" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="COMMENTS"/>
+				<Property Name="STATUS" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="STATUS"/>
+				<Property Name="___FK_b103d78f3f0d1d520e8be9b4" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="___FK_b103d78f3f0d1d520e8be9b4"/>
+			</EntityType>
+			<EntityType Name="TAB_WAIT">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="EBELN" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="EBELN"/>
+				<Property Name="SHIP_NO" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="SHIP_NO"/>
+				<Property Name="EINDT" Type="Edm.DateTime" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:display-format="Date"
+					sap:label="EINDT"/>
+				<Property Name="AFM_DATE" Type="Edm.DateTime" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:display-format="Date"
+					sap:label="AFM_DATE"/>
+				<Property Name="R_DATE" Type="Edm.DateTime" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:display-format="Date"
+					sap:label="R_DATE"/>
+				<Property Name="V_USER" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="V_USER"/>
+				<Property Name="DESCRIPTION" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DESCRIPTION"/>
+				<Property Name="PACKAGES" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="PACKAGES"/>
+				<Property Name="WEIGHTS_KG" Type="Edm.Double" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="WEIGHTS_KG"/>
+				<Property Name="LXAXH_CM" Type="Edm.Double" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="LXAXH_CM"/>
+				<Property Name="VOLUME_M3" Type="Edm.Double" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="VOLUME_M3"/>
+				<Property Name="TRUCK_TYPE" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="TRUCK_TYPE"/>
+				<Property Name="TRUCK_COST" Type="Edm.Double" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="TRUCK_COST"/>
+				<Property Name="TRUCK_PLATE" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="TRUCK_PLATE"/>
+				<Property Name="CHOICE_INVOICE" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="CHOICE_INVOICE"/>
+				<Property Name="ESTIBA" Type="Edm.Double" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ESTIBA"/>
+				<Property Name="AGILITY_INVOICE" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="AGILITY_INVOICE"/>
+				<Property Name="COMMENTS" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="COMMENTS"/>
+				<Property Name="STATUS" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="STATUS"/>
+				<Property Name="___FK_4b7c577663a4bb210e8be9c9" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="___FK_4b7c577663a4bb210e8be9c9"/>
+			</EntityType>
+			<EntityType Name="ZMM_TTRANSPORTATION">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="EBELN" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="EBELN"/>
+				<Property Name="SHIP_NO" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="SHIP_NO"/>
+				<Property Name="EINDT" Type="Edm.DateTime" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:display-format="Date"
+					sap:label="EINDT"/>
+				<Property Name="AFM_DATE" Type="Edm.DateTime" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:display-format="Date"
+					sap:label="AFM_DATE"/>
+				<Property Name="R_DATE" Type="Edm.DateTime" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:display-format="Date"
+					sap:label="R_DATE"/>
+				<Property Name="V_USER" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="V_USER"/>
+				<Property Name="DESCRIPTION" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DESCRIPTION"/>
+				<Property Name="PACKAGES" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="PACKAGES"/>
+				<Property Name="WEIGHTS_KG" Type="Edm.Double" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="WEIGHTS_KG"/>
+				<Property Name="LXAXH_CM" Type="Edm.Double" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="LXAXH_CM"/>
+				<Property Name="VOLUME_M3" Type="Edm.Double" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="VOLUME_M3"/>
+				<Property Name="TRUCK_TYPE" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="TRUCK_TYPE"/>
+				<Property Name="TRUCK_COST" Type="Edm.Double" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="TRUCK_COST"/>
+				<Property Name="TRUCK_PLATE" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="TRUCK_PLATE"/>
+				<Property Name="CHOICE_INVOICE" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="CHOICE_INVOICE"/>
+				<Property Name="ESTIBA" Type="Edm.Double" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ESTIBA"/>
+				<Property Name="AGILITY_INVOICE" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="AGILITY_INVOICE"/>
+				<Property Name="COMMENTS" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="COMMENTS"/>
+				<Property Name="STATUS" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="STATUS"/>
+				<NavigationProperty Name="READY" Relationship="49835fb7d0a746b50e86b095.ZMM_TTRANSPORTATIONREADYTAB_READY"
+					FromRole="FromRole_ZMM_TTRANSPORTATIONREADYTAB_READY" ToRole="ToRole_ZMM_TTRANSPORTATIONREADYTAB_READY"/>
+				<NavigationProperty Name="WAIT" Relationship="49835fb7d0a746b50e86b095.ZMM_TTRANSPORTATIONWAITTAB_WAIT"
+					FromRole="FromRole_ZMM_TTRANSPORTATIONWAITTAB_WAIT" ToRole="ToRole_ZMM_TTRANSPORTATIONWAITTAB_WAIT"/>
+				<NavigationProperty Name="FILTER" Relationship="49835fb7d0a746b50e86b095.ZMM_TTRANSPORTATIONFILTERFIELD_FILTER"
+					FromRole="FromRole_ZMM_TTRANSPORTATIONFILTERFIELD_FILTER" ToRole="ToRole_ZMM_TTRANSPORTATIONFILTERFIELD_FILTER"/>
+			</EntityType>
+			<Association Name="ZMM_TTRANSPORTATIONREADYTAB_READY">
+				<End Type="49835fb7d0a746b50e86b095.ZMM_TTRANSPORTATION" Multiplicity="1" Role="FromRole_ZMM_TTRANSPORTATIONREADYTAB_READY"/>
+				<End Type="49835fb7d0a746b50e86b095.TAB_READY" Multiplicity="*" Role="ToRole_ZMM_TTRANSPORTATIONREADYTAB_READY"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_ZMM_TTRANSPORTATIONREADYTAB_READY">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_ZMM_TTRANSPORTATIONREADYTAB_READY">
+						<PropertyRef Name="___FK_b103d78f3f0d1d520e8be9b4"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="ZMM_TTRANSPORTATIONWAITTAB_WAIT">
+				<End Type="49835fb7d0a746b50e86b095.ZMM_TTRANSPORTATION" Multiplicity="1" Role="FromRole_ZMM_TTRANSPORTATIONWAITTAB_WAIT"/>
+				<End Type="49835fb7d0a746b50e86b095.TAB_WAIT" Multiplicity="*" Role="ToRole_ZMM_TTRANSPORTATIONWAITTAB_WAIT"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_ZMM_TTRANSPORTATIONWAITTAB_WAIT">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_ZMM_TTRANSPORTATIONWAITTAB_WAIT">
+						<PropertyRef Name="___FK_4b7c577663a4bb210e8be9c9"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="ZMM_TTRANSPORTATIONFILTERFIELD_FILTER">
+				<End Type="49835fb7d0a746b50e86b095.ZMM_TTRANSPORTATION" Multiplicity="1" Role="FromRole_ZMM_TTRANSPORTATIONFILTERFIELD_FILTER"/>
+				<End Type="49835fb7d0a746b50e86b095.FIELD_FILTER" Multiplicity="*" Role="ToRole_ZMM_TTRANSPORTATIONFILTERFIELD_FILTER"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_ZMM_TTRANSPORTATIONFILTERFIELD_FILTER">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_ZMM_TTRANSPORTATIONFILTERFIELD_FILTER">
+						<PropertyRef Name="___FK_a35b7abe00ef5ee30e8bf630"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityType Name="FIELD_FILTER">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="F_NAME" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="F_NAME"/>
+				<Property Name="DefaultName" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+				<Property Name="___FK_a35b7abe00ef5ee30e8bf630" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="___FK_a35b7abe00ef5ee30e8bf630"/>
+			</EntityType>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

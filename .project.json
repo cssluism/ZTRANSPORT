@@ -1,0 +1,30 @@
+{
+  "dataBinding": {
+    "/webapp/view/Dialog1.view.xml": {
+      "entitySet": ""
+    },
+    "/webapp/view/Main.view.xml": {
+      "entitySet": "/ZMM_TTRANSPORTATIONSet"
+    },
+    "/webapp/view/Detail.view.xml": {
+      "entitySet": "/TAB_READYSet"
+    },
+    "/webapp/view/View_1.view.xml": {
+      "entitySet": "/TAB_READYSet"
+    }
+  },
+  "generation": [
+    {
+      "templateId": "build_import_prototype",
+      "templateVersion": "1.0.0",
+      "dateTimeStamp": "Tue, 26 Sep 2017 16:46:59 GMT"
+    }
+  ],
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "en,fr,de",
+    "defaultLanguage": "en",
+    "defaultI18NPropertyFile": "i18n.properties",
+    "resourceModelName": "i18n"
+  }
+}

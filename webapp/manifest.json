@@ -1,0 +1,172 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.2.0",
+		"id": "com.sap.build.standard.zmmtransport",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+
+			"main": {
+				"uri": "/here/goes/your/serviceUrl/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"ach": "ach",
+		"resources": "resources.json",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.32.0"
+		}
+	},
+	"sap.ui": {
+		"_version": "1.2.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": {
+			"viewName": "generated.app.view.View_1",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.32.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+
+			"": {
+				"dataSource": "main",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"loadMetadataAsync": false,
+					"json": true,
+					"bJSON": true,
+					"defaultBindingMode": "TwoWay",
+					"useBatch": true,
+					"refreshAfterChange": false,
+					"disableHeadRequestForToken": true
+				}
+			}
+
+		},
+		"resources": {
+			"css": []
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.sap.build.standard.zmmtransport.view",
+				"controlId": "App",
+				"clearTarget": false,
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": [
+						"Main"
+					]
+				}
+			},
+			"targets": {
+
+				"Main": {
+					"controlAggregation": "pages",
+					"viewName": "Main",
+					"viewId": "Main",
+					"viewLevel": 2,
+					"transition": "flip"
+				},
+
+				"Detail": {
+					"controlAggregation": "pages",
+					"viewName": "Detail",
+					"viewId": "Detail",
+					"viewLevel": 4,
+					"transition": "flip"
+				},
+
+				"View_1": {
+					"controlAggregation": "pages",
+					"viewName": "View_1",
+					"viewId": "View_1",
+					"viewLevel": 3,
+					"transition": "flip"
+				}
+
+			},
+			"routes": [
+
+				{
+					"pattern": "Main/:context:",
+					"name": "Main",
+					"target": [
+						"Main"
+					]
+				},
+
+				{
+					"pattern": "",
+					"name": "default",
+					"target": [
+						"Main"
+					]
+				},
+
+				{
+					"pattern": "Detail/:context:",
+					"name": "Detail",
+					"target": [
+						"Detail"
+					]
+				},
+
+				{
+					"pattern": "View_1/:context:",
+					"name": "View_1",
+					"target": [
+						"View_1"
+					]
+				}
+
+			]
+		}
+	}
+}
